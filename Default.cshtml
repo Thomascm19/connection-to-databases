@@ -1,0 +1,49 @@
+﻿@{ 
+    var nombre = Request["name"];
+    var cedula = Request["cedula"];
+    var telefono = Request["tel"];
+    Data.Cliente c = new Data.Cliente();
+    c.CC = Request["cedula"];
+    c.Nombre = Request["name"];
+    c.Tel = Request["tel"];
+    Data.ClienteData data = new Data.ClienteData();
+    data.CrearCliente(c);
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <center>
+        <form class="form1" id="myform" method="get" action="">
+
+            <legend>Cliente</legend>
+            <p>
+                <label for="name">Nombre</label>
+                <input id="name" name="name" minlength="5" type="text" required>
+            </p>
+            <p>
+                <label for="email">Cedula</label>
+                <input id="email" type="number" name="cedula" required>
+            </p>
+            <p>
+                <label for="dir">Ingresa tu telefono</label>
+                <input id="dir" type="tel" name="tel" required>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+
+        </form>
+    </center>
+</body>
+
+
+<script scr="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</html>
